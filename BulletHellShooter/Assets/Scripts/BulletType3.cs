@@ -5,10 +5,14 @@ public class BulletType3 : MonoBehaviour
     public GameObject bulletType3;
     public float bulletSpeed = 20f;
     public Transform firePoint;
+    public float fireEvery = 0.05f;
+
+    private float nextFireTime = 0f;
 
     void Update() {
-        if (Input.GetKeyDown(KeyCode.D)) {
+        if (Input.GetKey(KeyCode.D) && Time.time >= nextFireTime) {
             FireBullet();
+            nextFireTime = Time.time + fireEvery;
         }
         
     }
