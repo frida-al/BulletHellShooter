@@ -13,7 +13,7 @@ public class Bullet1Movement : MonoBehaviour
     }
 
     void Update() {
-        transform.Translate(Vector3.forward * 110f * Time.deltaTime);
+        transform.Translate(Vector3.forward * 60f * Time.deltaTime);
 
         float newY = startPosition.y + Mathf.Sin(Time.time * frequency) * amplitude;
         transform.position = new Vector3(transform.position.x, newY, transform.position.z);

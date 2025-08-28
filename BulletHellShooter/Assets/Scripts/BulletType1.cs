@@ -3,7 +3,7 @@ using UnityEngine;
 public class BulletType1 : MonoBehaviour
 {
     public GameObject bulletType1;
-    public float bulletSpeed = 20f;
+    public float bulletSpeed = 60f;
     public Transform firePoint;
     public float fireEvery = 0.05f;
 

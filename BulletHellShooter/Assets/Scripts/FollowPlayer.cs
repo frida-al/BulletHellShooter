@@ -4,7 +4,7 @@ public class NewMonoBehaviourScript : MonoBehaviour
 {
 
     public GameObject player;
-    private Vector3 offset = new Vector3(8,1,-5);
+    private Vector3 offset = new Vector3(8,0,-4);
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     
     /// <summary>
