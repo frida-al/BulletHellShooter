@@ -7,7 +7,7 @@ using UnityEngine;
 /// </summary>
 public class Bullet3Movement : MonoBehaviour
 {
-    public float amplitude = 1.7f;
+    public float amplitude = 1.5f;
     public float frequency = 4f;
 
     private Vector3 startPosition;

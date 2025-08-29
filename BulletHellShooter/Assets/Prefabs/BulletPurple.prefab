@@ -253,7 +253,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5bde32291d3a5ae408a7de31d32bbb29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationSpeed: 250
+  amplitude: 1
+  frequency: 4
 --- !u!1 &3956352358748971561
 GameObject:
   m_ObjectHideFlags: 0

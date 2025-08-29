@@ -12,7 +12,7 @@ public class BulletType2 : MonoBehaviour {
     public GameObject bulletType2;
     public Transform firePoint;
     public int numberOfBullets = 5; 
-    public float spreadAngle = 30f; 
+    public float spreadAngle = 20f; 
     public float bulletSpeed = 60f; 
     public float fireEvery = 0.05f;
 
