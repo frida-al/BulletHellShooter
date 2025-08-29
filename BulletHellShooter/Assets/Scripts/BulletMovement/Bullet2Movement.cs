@@ -1,5 +1,10 @@
 using UnityEngine;
 
+/// <summary>
+/// Class <c>Bullet2Movement</c> specifies the speed of the bullet type 2,
+/// stablishing the direction and speed of the movement.
+/// </summary>
+
 public class Bullet2Movement : MonoBehaviour {
     private float speed; 
     public void SetSpeed(float bulletSpeed) {

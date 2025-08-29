@@ -1,12 +1,19 @@
 using UnityEngine;
+using System.Collections;
 
-public class BulletType2 : MonoBehaviour
-{
+/// <summary>
+/// Class <c>BulletType2</c> specifies the speed of the bullet type 2,
+/// its instantiation point and frequency (to be fired), and its destruction rate.
+/// It also contains the movement pattern of this bullet.
+/// </summary>
+
+public class BulletType2 : MonoBehaviour {
+    
     public GameObject bulletType2;
+    public Transform firePoint;
     public int numberOfBullets = 5; 
     public float spreadAngle = 30f; 
     public float bulletSpeed = 60f; 
-    public Transform firePoint;
     public float fireEvery = 0.05f;
 
     private float nextFireTime = 0f;
@@ -25,7 +32,17 @@ public class BulletType2 : MonoBehaviour
             float angle = startAngle + (i * angleStep);
             Quaternion bulletRotation = Quaternion.Euler(angle, 90, 0);
             GameObject bullet = Instantiate(bulletType2, firePoint.position, bulletRotation);
+            BulletCounter.Instance.BulletFired();
+
+
             bullet.GetComponent<Bullet2Movement>().SetSpeed(bulletSpeed);
+            Destroy(bullet, 2f);
+            StartCoroutine(NotifyBulletDestroyedAfterDelay(2f));
         }
+    }
+
+    private IEnumerator NotifyBulletDestroyedAfterDelay(float delay) {
+        yield return new WaitForSeconds(delay);
+        BulletCounter.Instance.BulletDestroyed();
     }
 }

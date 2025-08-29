@@ -1,10 +1,16 @@
 using UnityEngine;
+using System.Collections;
 
-public class BulletType1 : MonoBehaviour
-{
+/// <summary>
+/// Class <c>BulletType1</c> specifies the speed of the bullet type 1,
+///  its instantiation point and frequency (to be fired), and its destruction rate.
+/// </summary>
+
+public class BulletType1 : MonoBehaviour {
+
     public GameObject bulletType1;
-    public float bulletSpeed = 60f;
     public Transform firePoint;
+    public float bulletSpeed = 60f;
     public float fireEvery = 0.05f;
 
     private float nextFireTime = 0f;
@@ -14,11 +20,18 @@ public class BulletType1 : MonoBehaviour
             FireBullet();
             nextFireTime = Time.time + fireEvery;
         }
-        
     }
 
     void FireBullet() {
         GameObject bullet = Instantiate(bulletType1, firePoint.position, firePoint.rotation);
+        BulletCounter.Instance.BulletFired();
 
+        Destroy(bullet, 2f);
+        StartCoroutine(NotifyBulletDestroyedAfterDelay(2f));
+    }
+
+    private IEnumerator NotifyBulletDestroyedAfterDelay(float delay) {
+        yield return new WaitForSeconds(delay);
+        BulletCounter.Instance.BulletDestroyed();
     }
 }

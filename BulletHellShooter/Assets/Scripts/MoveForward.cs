@@ -1,15 +1,19 @@
 using UnityEngine;
 
+/// <summary>
+/// Class <c>MoveForward</c> allows the character to move in the horizontal axis
+/// </summary>
+
 public class MoveForward : MonoBehaviour
 {
+    
     public int speed;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+
     void Start()
     {
         
     }
 
-    // Update is called once per frame
     void Update() {
     float moveHorizontal = Input.GetAxis("Horizontal"); 
 
